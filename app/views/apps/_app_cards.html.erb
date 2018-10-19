@@ -1,0 +1,67 @@
+<h1 class="header"><%= name %></h1>
+<div class="ui divider"></div>
+<div class="ui link cards app-cards">
+  <a class="card card-father">
+    <div class="image">
+      <img src="">
+    </div>
+    <div class="content">
+      <div class="header">ID: <%= object['organization']['id'] %></div>
+      <div class="meta">Criado em: <%= object['receipt']['created_at'] %></div>
+      <div class="description"></div>
+    </div>
+
+  </a>
+</div>
+<h3 class="header">Balances</h3>
+<div class="ui divider"></div>
+<div class="ui link cards app-cards">
+  <% object['organization']['balances'].each do |app| %>
+      <a class="card card-son">
+        <div class="image">
+          <img src="">
+        </div>
+        <div class="content">
+          <div class="header">Balance: <%= app['balance'] %></div>
+          <div class="meta">Asset Id: <%= app['asset_id'] %></div>
+          <div class="description">Asset Code: <%= app['asset_code'] %></div>
+        </div>
+      </a>
+  <% end %>
+</div>
+<h3 class="header">Accounts</h3>
+<div class="ui divider"></div>
+<div class="ui link cards app-cards">
+  <% if !accounts.blank? %>
+    <% accounts.each do |app| %>
+        <a class="card card-son">
+          <div class="image">
+            <img src="">
+          </div>
+          <div class="content">
+            <div class="header">Account: <%= app['account']['id'] %></div>
+            <div class="meta">Created At: <%= app['receipt']['created_at'] %></div>
+          </div>
+        </a>
+    <% end %>
+  <% end %>
+</div>
+
+<h3 class="header">Payments</h3>
+<div class="ui divider"></div>
+<div class="ui link cards app-cards">
+  <% if !payments.blank? %>
+    <% assets.each do |app| %>
+        <a class="card card-son">
+          <div class="image">
+            <img src="">
+          </div>
+          <div class="content">
+            <div class="header">Code: <%= app['asset']['code'] %></div>
+            <div class="meta">Asset: <%= app['asset']['id'] %></div>
+            <div class="description">Asset Limit: <%= app['asset']['limit'] %></div>
+          </div>
+        </a>
+    <% end %>
+  <% end %>
+</div>

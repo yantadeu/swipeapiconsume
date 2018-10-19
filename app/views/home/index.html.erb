@@ -1,0 +1,5 @@
+<div class="ui raised segment search-container">
+  <img class="ui centered medium image" src="/logo-text.png" >
+</div>
+<%= react_component("Home") %>
+<%= render partial: "apps/app_cards", locals: { name: "Organization #{@organization['organization']['name']}", object: @organization, accounts: @accounts, assets: @assets , payments: @payments } %>

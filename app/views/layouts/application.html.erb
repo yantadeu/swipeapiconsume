@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SwipeApiConsume</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="ui container">
+      <div class="ui stackable menu">
+        <a class="header item" href="/">
+          <img src="/logo.ico">
+          <span style="margin-left: 8px;">SwipeApiConsume</span>
+        </a>
+        <a class="item" href="/">Home</a>
+      </div>
+    </div>
+    <div class="ui container content">
+      <%= yield %>
+    </div>
+  </body>
+</html>
